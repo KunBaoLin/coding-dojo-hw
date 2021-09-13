@@ -52,5 +52,3 @@ class User:
 leo = User("Leo")
 leo.accounts["checking"].deposit(2000)
 leo.display_user_balance()
-leo.accounts['saving'].deposit(1000)
-leo.display_user_balance

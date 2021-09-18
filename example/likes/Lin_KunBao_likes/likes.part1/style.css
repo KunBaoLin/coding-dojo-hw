@@ -1,0 +1,24 @@
+.box{
+    height: 150px;
+    width: 300px;
+    border: 2px solid black;
+    background-color:gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:5px;
+}
+.top, .bot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right{
+    margin-left: 15px;
+}
+
+button{
+    box-shadow: 5px 5px 5px;
+    background-color: orange;
+}

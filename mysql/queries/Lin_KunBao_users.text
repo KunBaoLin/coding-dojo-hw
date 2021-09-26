@@ -1,0 +1,29 @@
+use users_schema;
+
+select * from users;
+
+insert into users(first_name,last_name,email)
+value('leo','lin','leo@yahoo.com'),('jose','ma','jose@gmail.com'),('david','xiao','xxx@gmail.com');
+
+select * from users
+where email = "leo@yahoo.com";
+
+select * from users
+where id = "3";
+
+update users_schema.users set
+last_name = 'pancake'
+where id =  '3';
+
+DELETE FROM `users_schema`.`users` WHERE (`id` = '2');
+
+SELECT *
+FROM users
+ORDER BY first_name ASC;
+
+SELECT *
+FROM users
+ORDER BY first_name desc;
+
+
+

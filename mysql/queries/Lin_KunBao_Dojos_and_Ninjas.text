@@ -1,0 +1,32 @@
+use dojos_and_ninjas_schemas;
+
+insert into dojos(name)
+value('leo'),('alice'),('wesley');
+
+SET SQL_SAFE_UPDATES = 0;
+delete from dojos;
+
+insert into dojos(name)
+value('ny'),('sj'),('sf');
+
+insert into ninjas(first_name,last_name,age,dojo_id)
+value('leo','lin',32,4),('alice','yang',30,4),('wesley','lin',2,4);
+
+insert into ninjas(first_name,last_name,age,dojo_id)
+value('jeff','lin',36,5),('anna','yang',28,5),('david','lin',33,5);
+
+insert into ninjas(first_name,last_name,age,dojo_id)
+value('jose','lin',32,6),('lucccy','yang',29,6),('nomi','lin',6,6);
+
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 4;
+
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = (SELECT id FROM dojos ORDER BY id DESC LIMIT 1);
+
+SELECT * FROM dojos
+WHERE dojos.id = (SELECT dojo_id FROM ninjas ORDER BY dojo_id DESC LIMIT 1);
+
+select * from ninjas;

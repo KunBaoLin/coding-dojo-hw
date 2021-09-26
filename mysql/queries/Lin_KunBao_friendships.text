@@ -1,0 +1,27 @@
+INSERT INTO users (first_name, last_name)
+VALUES ("leo","lin"),("alice","yang"),("anna","yang"),("frank","chen"),("ronald","li"),("david","xiao");
+
+INSERT INTO friendship (user_id,friend_id)
+VALUES (1,2),(1,4),(1,6),(2,1),(2,3),(2,5),(3,2),(3,5),(4,3),(5,1),(5,6),(6,2),(6,3);
+
+SELECT users.first_name, users.last_name, users2.first_name as friend_first_name, users2.last_name as friend_last_name FROM users
+JOIN friendship ON users.id = friendship.user_id
+LEFT JOIN users as users2 ON users2.id = friendship.friend_id;
+
+SELECT users.first_name as first_user, users2.first_name as friend_first_name,users2.last_name FROM users
+JOIN friendship ON users.id = friendship.user_id
+LEFT JOIN users as users2 ON users2.id = friendship.friend_id
+WHERE users.id = 1;
+
+select  count(id) as num_friendship from friendship;
+
+SELECT user_id, users.first_name, users.last_name, count(user_id) as num_of_friends from friendship
+JOIN users ON users.id = friendship.user_id
+GROUP BY user_id
+ORDER BY num_of_friends desc
+LIMIT 1;
+
+SELECT users.first_name as third_user, users2.first_name as friend_first_name,users2.last_name FROM users
+JOIN friendship ON users.id = friendship.user_id
+LEFT JOIN users as users2 ON users2.id = friendship.friend_id
+WHERE users.id = 3;

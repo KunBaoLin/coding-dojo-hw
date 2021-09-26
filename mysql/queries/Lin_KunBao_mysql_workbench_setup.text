@@ -1,0 +1,10 @@
+use mysql_workbench_setup_practice;
+
+select * from names;
+
+insert into names(names,age)
+value('Leo','31'),('alice','28');
+
+DELETE FROM `mysql_workbench_setup_practice`.`names` WHERE (`id` = '2');
+
+UPDATE `mysql_workbench_setup_practice`.`names` SET `names` = 'frank' WHERE (`id` = '1');

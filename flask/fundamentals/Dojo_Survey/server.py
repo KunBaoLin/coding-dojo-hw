@@ -1,4 +1,3 @@
-from types import MethodDescriptorType
 from flask import Flask,render_template,request,redirect,session
 app =  Flask(__name__)
 app.secret_key="aaafdsasdf1d9a5f4a6f1d6af1s51d6a"
@@ -12,7 +11,7 @@ def process():
     session['name'] = request.form['name']
     session['location'] = request.form['location']
     session['language'] = request.form['language']
-    session['comments'] = request.form['comments']
+    session['comment'] = request.form['comment']
     return redirect('/result')
 
 @app.route('/result')

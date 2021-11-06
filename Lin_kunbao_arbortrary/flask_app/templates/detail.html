@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .card{
+            margin-top: 100px;
+            margin-left: 300px;
+            background-color: yellowgreen;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px 5px grey;
+            }
+    </style>
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center col-12 bg-dark text-success">
+        <h1 class="text-center">Welcome {{user.first_name}}!!!</h1>
+        <div class="d-flex col-4 justify-content-around">
+            <a href="/mytrees" class='btn btn-danger'>My trees</a>
+            <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+            <a href="/logout" class="btn btn-info">Logout</a>
+
+        </div>
+
+    </nav>
+    <div class="card col-10 mx-auto my-5 text-light">
+        <div class="card-body text-dark">
+            <h1 class="card-title">{{tree.name.title()}} Planted By {{user.first_name.title()}}</h>
+            <p class="card-text">Where:  {{tree.location}}</p>
+            <p class="card-text">Why create:  {{tree.reason}}</p>
+            <p class="card-text">When:  {{tree.date_planted.strftime('%Y-%m-%d')}}</p>
+        </div>
+    </div>
+</body>
+</html>

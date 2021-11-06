@@ -1,0 +1,13 @@
+    core feature list:
+    register / sign up
+    login /
+    create rave/
+    everyone can see the rave created/ action to "going"
+    edit rave/ delete rave
+    rave detail information/
+
+    stretch goal:
+    map, or weather API
+
+github link
+https://github.com/KunBaoLin/rave-event_reminder.git
